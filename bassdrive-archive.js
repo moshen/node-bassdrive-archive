@@ -6,6 +6,7 @@ var Promise = require('bluebird'),
     moment  = require('moment'),
     mkdirp  = Promise.promisify(require('mkdirp')),
     fs      = require('fs'),
+    path    = require('path'),
     chalk   = require('chalk'),
     pjson   = require('./package.json'),
     yargs   = require('yargs')
@@ -156,7 +157,8 @@ spiderForMp3('http://archives.bassdrivearchive.com').then(function(){
     return mp3.date ? mp3.date.isBetween(start, end) : false;
   }).map(function(mp3) {
     mp3.path = argv.d + decodeURIComponent(mp3.url).slice(7);
-    mp3.dir  = mp3.path.slice(0, mp3.path.lastIndexOf('/'));
+    mp3.dir  = path.normalize(mp3.path.slice(0, mp3.path.lastIndexOf('/')));
+    mp3.path = path.normalize(mp3.path);
     return mp3;
   }).sortBy(function(mp3) {
     return +mp3.date;
