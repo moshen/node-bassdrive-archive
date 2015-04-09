@@ -7,6 +7,7 @@ var Promise = require('bluebird'),
     mkdirp  = Promise.promisify(require('mkdirp')),
     fs      = require('fs'),
     chalk   = require('chalk'),
+    pjson   = require('./package.json'),
     yargs   = require('yargs')
       .usage('Usage: $0 [-hvn] [-s <YYYY-MM-DD>] [-e <YYYY-MM-DD>] [-m <num>] [-d <dir>]')
       .option('h', {
@@ -25,6 +26,11 @@ var Promise = require('bluebird'),
         alias: 'verbose',
         demand: false,
         describe: 'Print all info/warnings/errors',
+        type: 'boolean'
+      })
+      .option('version', {
+        demand: false,
+        describe: 'Print version: ' + pjson.version,
         type: 'boolean'
       })
       .option('s', {
@@ -58,6 +64,10 @@ var Promise = require('bluebird'),
 
 if(argv.h) {
   yargs.showHelp();
+  process.exit(0);
+}
+if(argv.version) {
+  console.log('bassdrive-archive version: ' + pjson.version);
   process.exit(0);
 }
 
