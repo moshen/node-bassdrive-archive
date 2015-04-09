@@ -2,8 +2,17 @@
   "name": "bassdrive-archive",
   "version": "1.1.0",
   "description": "Bassdrive Archive downloader",
-  "readme": "README.md",
-  "repository": "https://www.github.com/moshen/node-bassdrive-archive",
+  "homepage": "https://www.github.com/moshen/node-bassdrive-archive",
+  "bugs": "https://www.github.com/moshen/node-bassdrive-archive/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://www.github.com/moshen/node-bassdrive-archive.git"
+  },
+  "keywords": [
+    "cli",
+    "download",
+    "music"
+  ],
   "bin": {
     "bassdrive-archive": "./bassdrive-archive.js"
   },
