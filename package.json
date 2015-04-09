@@ -18,7 +18,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node bassdrive-archive.js"
+    "jshint": "jshint bassdrive-archive.js"
   },
   "author": "Colin Kennedy <moshen.colin@gmail.com>",
   "license": "MIT",
@@ -31,5 +31,8 @@
     "moment": "^2.9.0",
     "request": "^2.54.0",
     "yargs": "^3.6.0"
+  },
+  "devDependencies": {
+    "jshint": "^2.6.3"
   }
 }
