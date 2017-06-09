@@ -65,7 +65,8 @@ var Promise = require('bluebird'),
         alias: 'concurrency',
         demand: false,
         describe: 'Number of concurrent downloads',
-        type: 'number'
+        type: 'number',
+        default: 1
       }),
     argv    = yargs.argv;
 
@@ -220,5 +221,5 @@ spiderForMp3('http://archives.bassdrivearchive.com').then(function(){
       });
     }
   });
-}, {concurrency: argv.c || 1}).all();
+}, {concurrency: argv.c).all();
 
