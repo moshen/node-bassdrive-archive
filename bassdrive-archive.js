@@ -10,7 +10,7 @@ var Promise = require('bluebird'),
     chalk   = require('chalk'),
     pjson   = require('./package.json'),
     yargs   = require('yargs')
-      .usage('Usage: $0 [-hvn] [-s <YYYY-MM-DD>] [-e <YYYY-MM-DD>] [-m <num>] [-d <dir>]')
+      .usage('Usage: $0 [-hvn] [-s <YYYY-MM-DD>] [-e <YYYY-MM-DD>] [-m <num>] [-d <dir>] [-c <num>]')
       .option('h', {
         alias: 'help',
         demand: false,
@@ -60,6 +60,13 @@ var Promise = require('bluebird'),
         demand: false,
         describe: 'Max number of mp3s to download in chronological order',
         type: 'number'
+      })
+      .option('c', {
+        alias: 'concurrency',
+        demand: false,
+        describe: 'Number of concurrent downloads',
+        type: 'number',
+        default: 1
       }),
     argv    = yargs.argv;
 
@@ -214,5 +221,5 @@ spiderForMp3('http://archives.bassdrivearchive.com').then(function(){
       });
     }
   });
-}, {concurrency: 1}).all();
+}, {concurrency: argv.c}).all();
 
