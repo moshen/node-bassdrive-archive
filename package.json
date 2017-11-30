@@ -23,14 +23,13 @@
   "author": "Colin Kennedy <moshen.colin@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "bassdrive-archive-spider": "0.0.2",
     "bluebird": "^3.5.0",
-    "chalk": "^1.0.0",
-    "cheerio": "^0.22.0",
-    "lodash": "^4.17.4",
+    "chalk": "^2.3.0",
     "mkdirp": "^0.5.0",
     "moment": "^2.9.0",
     "request": "^2.54.0",
-    "yargs": "^8.0.2"
+    "yargs": "^10.0.3"
   },
   "devDependencies": {
     "jshint": "^2.6.3"
