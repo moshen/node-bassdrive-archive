@@ -1,6 +1,6 @@
 {
   "name": "bassdrive-archive",
-  "version": "1.2.0",
+  "version": "1.2.1-beta.0",
   "description": "Bassdrive Archive downloader",
   "homepage": "https://www.github.com/moshen/node-bassdrive-archive",
   "bugs": "https://www.github.com/moshen/node-bassdrive-archive/issues",
