@@ -2,7 +2,7 @@
 var Promise = require('bluebird'),
     request = require('request'),
     moment  = require('moment'),
-    mkdirp  = Promise.promisify(require('mkdirp')),
+    mkdirp  = require('mkdirp'),
     fs      = require('fs'),
     path    = require('path'),
     pjson   = require('./package.json'),
